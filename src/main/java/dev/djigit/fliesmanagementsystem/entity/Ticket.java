@@ -1,19 +1,14 @@
 package dev.djigit.fliesmanagementsystem.entity;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Ticket extends Entity {
-    private String name;
-    private Integer fromId;
-    private Integer destinationId;
-    private Integer baggageId;
+    private Boolean isFree;
 
-    public Ticket(Integer id, String name, Integer fromId, Integer destinationId, Integer baggageId) {
+    public Ticket(Integer id, Boolean isFree) {
         super(id);
-        this.name = name;
-        this.fromId = fromId;
-        this.destinationId = destinationId;
-        this.baggageId = baggageId;
+        this.isFree = isFree;
+    }
+
+    public Boolean isFree() {
+        return isFree;
     }
 }

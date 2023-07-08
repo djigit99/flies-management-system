@@ -2,7 +2,6 @@ package dev.djigit.fliesmanagementsystem.entity;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Baggage extends Entity {
     private String name;
 

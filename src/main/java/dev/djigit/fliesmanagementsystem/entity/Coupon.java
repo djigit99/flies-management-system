@@ -1,20 +1,20 @@
 package dev.djigit.fliesmanagementsystem.entity;
 
-import javax.annotation.PostConstruct;
 import java.util.Random;
 
 public class Coupon extends Entity {
     private Boolean isUsed;
-    private Integer discount;
+    private double discount;
 
     public Coupon(Integer id, Boolean isUsed) {
         super(id);
         this.isUsed = isUsed;
+
+        double[] discounts = {0.10, 0.50, 0.60};
+        this.discount = discounts[new Random().nextInt(2)];
     }
 
-    @PostConstruct
-    public void setDiscount() {
-        int[] discounts = {10, 50, 60};
-        this.discount = discounts[new Random().nextInt(2)];
+    public double getDiscount() {
+        return discount;
     }
 }
