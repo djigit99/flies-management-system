@@ -52,24 +52,28 @@ public class Database {
     }
 
     public Optional<Ticket> getTicketById(Integer id) {
+        LOGGER.debug("Imitating database search..");
         if (ticketMap.containsKey(id))
             return Optional.of(ticketMap.get(id));
         return Optional.empty();
     }
 
     public Optional<Baggage> getBaggageById(Integer id) {
+        LOGGER.debug("Imitating database search..");
         if (baggageMap.containsKey(id))
             return Optional.of(baggageMap.get(id));
         return Optional.empty();
     }
 
     public Optional<Location> getLocationById(Integer id) {
+        LOGGER.debug("Imitating database search..");
         if (locationMap.containsKey(id))
             return Optional.of(locationMap.get(id));
         return Optional.empty();
     }
 
     public Optional<Coupon> getCouponById(Integer id) {
+        LOGGER.debug("Imitating database search..");
         if (couponMap.containsKey(id))
             return Optional.of(couponMap.get(id));
         return Optional.empty();
