@@ -26,6 +26,8 @@ public class CouponCheckController {
         Optional<Coupon> coupon = couponDao.getCouponById(couponId);
         if (coupon.isEmpty())
             return new ResponseEntity<>("Coupon not found", HttpStatus.NOT_FOUND);
+        if (coupon.get().isUsed())
+            return new ResponseEntity<>("Coupon is found but it was activated before.", HttpStatus.OK);
 
         Double ticketNewPrice = couponService.getTicketNewPrice(ticketPrice, coupon.get().getDiscount());
         return new ResponseEntity<>(ticketNewPrice, HttpStatus.OK);

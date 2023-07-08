@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Coupon extends Entity {
     private Boolean isUsed;
-    private double discount;
+    private final double discount;
 
     public Coupon(Integer id, Boolean isUsed) {
         super(id);
@@ -16,5 +16,13 @@ public class Coupon extends Entity {
 
     public double getDiscount() {
         return discount;
+    }
+
+    public Boolean isUsed() {
+        return isUsed;
+    }
+
+    public void setUsed(Boolean used) {
+        isUsed = used;
     }
 }
